@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.odoo_studio_product__dc8aa5d9-7520-4022-b4ff-57f2989e71f1" model="ir.ui.view" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//form[@name='Product Template']/sheet[@name='product_form']/notebook[1]" position="inside">
+          <page string="Gymnasio" name="studio_page_ek_1ho5i2kgo">
+            <group name="studio_group_ek">
+              <group name="studio_group_ek_left" string="Información del Gymnasio">
+                <field name="x_studio_char_field_2jc_1ho5i35jg" string="Dirección"/>
+                <field name="x_studio_correo" widget="email"/>
+                <field name="x_studio_celular" widget="phone"/>
+                <field name="x_studio_latitud"/>
+                <field name="x_studio_longitud"/>
+              </group>
+              <group name="studio_group_ek_right" string="Descripción del Gymnasio">
+                <field name="x_studio_horario"/>
+                <field name="x_studio_descripcin"/>
+                <field name="x_studio_coachs"/>
+                <field name="x_studio_maquinas"/>
+              </group>
+            </group>
+            <group name="studio_group_cp_1ho5ie1vm">
+              <group name="studio_group_cp_left" string="Redes Sociales">
+                <field name="x_studio_pgina_web" widget="url"/>
+                <field name="x_studio_facebook" widget="url"/>
+                <field name="x_studio_instagram" widget="url"/>
+                <field name="x_studio_tik_tok" widget="url"/>
+                <field name="x_studio_x" widget="url"/>
+              </group>
+              <group name="studio_group_cp_right" string="Documentos">
+                <field widget="binary" filename="x_studio_documento_filename" name="x_studio_documento"/>
+                <field widget="file" invisible="True" name="x_studio_documento_filename"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </data>
+    </field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="key" eval="False"/>
+    <field name="mode">extension</field>
+    <field name="model">product.template</field>
+    <field name="name">Odoo Studio: product.template.product.form customization</field>
+    <field name="priority">150</field>
+    <field name="type">form</field>
+  </record>
+</odoo>
