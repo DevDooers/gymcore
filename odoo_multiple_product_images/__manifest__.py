@@ -20,8 +20,8 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'odoo_multiple_product_images/static/src/*.js',
-            'odoo_multiple_product_images/static/src/*.scss',
+            #'odoo_multiple_product_images/static/src/js/*.js',
+            'odoo_multiple_product_images/static/src/scss/multiple_images.scss',
         ],
     },
 }
