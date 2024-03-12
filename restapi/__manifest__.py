@@ -3,7 +3,7 @@
 
 {
     'name': 'Odoo REST API (JSON & XML)',
-    'version': '1.0',
+    'version': '1.1',
     'summary': 'It accesses Odoo using standard HTTP GET, PUT, POST, and DELETE methods and a simple JSON and XML input and output format',
     'category': 'Tools',
     'description': """
