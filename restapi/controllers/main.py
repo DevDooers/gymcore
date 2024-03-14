@@ -570,7 +570,7 @@ class RestApi(http.Controller):
                     data = env_obj.search_read([('id', '=', data)])
 
             data_description = object
-            print('data_description',data_description = object)
+            print('data_description',data_description)
 
             if method == 'search_count':
                 data_description = 'count'
