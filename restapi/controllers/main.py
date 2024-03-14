@@ -570,6 +570,7 @@ class RestApi(http.Controller):
                     data = env_obj.search_read([('id', '=', data)])
 
             data_description = object
+            
 
             if method == 'search_count':
                 data_description = 'count'
@@ -583,6 +584,7 @@ class RestApi(http.Controller):
                             if isinstance(val[v], bytes):
                                 val[v] = val[v].decode('utf-8')
                 if isinstance(data[0], int) or len(data)>1:
+                    #print('description')
                     datas.update({data_description: data})
                 else:
                     print('description')
