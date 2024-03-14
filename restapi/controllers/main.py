@@ -570,7 +570,6 @@ class RestApi(http.Controller):
                     data = env_obj.search_read([('id', '=', data)])
 
             data_description = object
-            
 
             if method == 'search_count':
                 data_description = 'count'
@@ -584,13 +583,9 @@ class RestApi(http.Controller):
                             if isinstance(val[v], bytes):
                                 val[v] = val[v].decode('utf-8')
                 if isinstance(data[0], int) or len(data)>1:
-                    print('description')
-                    _logger.warning("data_description", data_description)
-                    _logger.warning("data", data)
-                    datas = data
+                    datas.update({data_description: data})
                 else:
-                    print('description')
-                    #datas.update({data_description: data[0]})
+                    datas.update({data_description: data[0]})
             elif data:
                 if method == 'unlink':
                     datas = {"id": id}
@@ -611,16 +606,16 @@ class RestApi(http.Controller):
             return self.get_response(403, '403', {'error': {'code': 403, 'message': str(hasattr(e, 'message') and str(e.message) or e)}})
 
         fields_list, boolean_list = [], []
-        #if object in datas.keys() and datas[object] and isinstance(datas[object], dict):
-        #    for name in request.env[object]._fields.keys():
-        #        field_id = request.env['ir.model.fields']._get(object, name)
-        #        if field_id.ttype in ['char', 'selection', 'binary', 'date', 'datetime']:
-        #            fields_list.append(name)
-        #        elif field_id.ttype == 'boolean':
-        #            boolean_list.append(name)
-        #    for data in datas[object]:
-        #        if data in fields_list and datas[object].get(data) == False:
-        #            datas[object].update({data: ''})
+        if object in datas.keys() and datas[object] and isinstance(datas[object], dict):
+            for name in request.env[object]._fields.keys():
+                field_id = request.env['ir.model.fields']._get(object, name)
+                if field_id.ttype in ['char', 'selection', 'binary', 'date', 'datetime']:
+                    fields_list.append(name)
+                elif field_id.ttype == 'boolean':
+                    boolean_list.append(name)
+            for data in datas[object]:
+                if data in fields_list and datas[object].get(data) == False:
+                    datas[object].update({data: ''})
 
         if request.httprequest.headers.get('Accept') == 'application/xml' or request.httprequest.content_type == "application/xml":
             result = self.get_response(request_code, str(request_code), datas)
