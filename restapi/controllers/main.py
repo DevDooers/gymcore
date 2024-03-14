@@ -532,15 +532,15 @@ class RestApi(http.Controller):
             else:
                 arguments.extend([self.evaluate(kwargs.get(arg)) for arg in args['arg']])
             k_arguments = dict([(arg, self.evaluate(kwargs[arg])) for arg in args['kwargs'] if kwargs.get(arg)])
-            if method in self._GET_METHODS:
-                if type(self.evaluate(kwargs.get('domain'))) is list and ids:
-                    arguments[0].append(('id', 'in', ids))
-                elif ids:
-                    arguments[0] = [('id', 'in', ids)]
-                elif not self.evaluate(kwargs.get('domain')):
-                    arguments[0] = []
-            elif ids:
-                arguments.insert(0, ids)
+            #if method in self._GET_METHODS:
+            #    if type(self.evaluate(kwargs.get('domain'))) is list and ids:
+            #        arguments[0].append(('id', 'in', ids))
+            #    elif ids:
+            #        arguments[0] = [('id', 'in', ids)]
+            #    elif not self.evaluate(kwargs.get('domain')):
+            #        arguments[0] = []
+            #elif ids:
+            #    arguments.insert(0, ids)
         elif method in ('create', 'write'):
             arguments = [ids, payload] if ids else [payload]
             method = ids and 'write' or 'create'
