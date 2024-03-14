@@ -571,9 +571,7 @@ class RestApi(http.Controller):
 
             data_description = object
             if '.' in data_description:
-                resultado = data_description.split('.')[0]
-            else:
-                resultado = data_description
+                data_description = data_description.split('.')[0]
 
             if method == 'search_count':
                 data_description = 'count'
