@@ -611,16 +611,16 @@ class RestApi(http.Controller):
             return self.get_response(403, '403', {'error': {'code': 403, 'message': str(hasattr(e, 'message') and str(e.message) or e)}})
 
         fields_list, boolean_list = [], []
-        if object in datas.keys() and datas[object] and isinstance(datas[object], dict):
-            for name in request.env[object]._fields.keys():
-                field_id = request.env['ir.model.fields']._get(object, name)
-                if field_id.ttype in ['char', 'selection', 'binary', 'date', 'datetime']:
-                    fields_list.append(name)
-                elif field_id.ttype == 'boolean':
-                    boolean_list.append(name)
-            for data in datas[object]:
-                if data in fields_list and datas[object].get(data) == False:
-                    datas[object].update({data: ''})
+        #if object in datas.keys() and datas[object] and isinstance(datas[object], dict):
+        #    for name in request.env[object]._fields.keys():
+        #        field_id = request.env['ir.model.fields']._get(object, name)
+        #        if field_id.ttype in ['char', 'selection', 'binary', 'date', 'datetime']:
+        #            fields_list.append(name)
+        #        elif field_id.ttype == 'boolean':
+        #            boolean_list.append(name)
+        #    for data in datas[object]:
+        #        if data in fields_list and datas[object].get(data) == False:
+        #            datas[object].update({data: ''})
 
         if request.httprequest.headers.get('Accept') == 'application/xml' or request.httprequest.content_type == "application/xml":
             result = self.get_response(request_code, str(request_code), datas)
