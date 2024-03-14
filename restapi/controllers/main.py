@@ -587,7 +587,7 @@ class RestApi(http.Controller):
                     print('description')
                     _logger.warning("data_description", data_description)
                     _logger.warning("data", data)
-                    datas.update(data)
+                    datas = data
                 else:
                     print('description')
                     #datas.update({data_description: data[0]})
