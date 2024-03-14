@@ -569,7 +569,7 @@ class RestApi(http.Controller):
                 else:
                     data = env_obj.search_read([('id', '=', data)])
 
-            data_description = ''
+            data_description = object
 
             if method == 'search_count':
                 data_description = 'count'
@@ -585,7 +585,8 @@ class RestApi(http.Controller):
                 if isinstance(data[0], int) or len(data)>1:
                     datas.update({data_description: data})
                 else:
-                    datas.update({data_description: data[0]})
+                    print('data_description')
+                    ##datas.update({data_description: data[0]})
             elif data:
                 if method == 'unlink':
                     datas = {"id": id}
@@ -593,7 +594,8 @@ class RestApi(http.Controller):
                         data = kwargs.get("ids")
                         datas = {"ids": data}
                 else:
-                    datas.update({data_description: data})
+                    print('data_description')
+                    ##datas.update({data_description: data})
             else:
                 if method == 'search_count':
                     datas.update({data_description: 0})
