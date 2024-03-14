@@ -582,11 +582,11 @@ class RestApi(http.Controller):
                         for v in list(val):
                             if isinstance(val[v], bytes):
                                 val[v] = val[v].decode('utf-8')
-                #if isinstance(data[0], int) or len(data)>1:
-                #    datas.update({data_description: data})
-                #else:
-                #    print('data_description')
-                #    ##datas.update({data_description: data[0]})
+                if isinstance(data[0], int) or len(data)>1:
+                    datas.update({data_description: data})
+                else:
+                    print('description')
+                    #datas.update({data_description: data[0]})
             elif data:
                 if method == 'unlink':
                     datas = {"id": id}
@@ -594,8 +594,7 @@ class RestApi(http.Controller):
                         data = kwargs.get("ids")
                         datas = {"ids": data}
                 else:
-                    print('data_description')
-                    ##datas.update({data_description: data})
+                    datas.update({data_description: data})
             else:
                 if method == 'search_count':
                     datas.update({data_description: 0})
