@@ -584,8 +584,8 @@ class RestApi(http.Controller):
                             if isinstance(val[v], bytes):
                                 val[v] = val[v].decode('utf-8')
                 if isinstance(data[0], int) or len(data)>1:
-                    #print('description')
-                    datas.update({data_description: data})
+                    print('description')
+                    #datas.update({data_description: data})
                 else:
                     print('description')
                     #datas.update({data_description: data[0]})
