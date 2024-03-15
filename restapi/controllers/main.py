@@ -540,6 +540,7 @@ class RestApi(http.Controller):
                     arguments[0] = []
                     if req:
                         arguments[0] = [('id', 'in', ids)]
+                        
                 if type(self.evaluate(kwargs.get('domain'))) is list and ids:
                     arguments[0].append(('id', 'in', ids))
                 elif ids:
