@@ -21,6 +21,7 @@ from odoo.http import Response, request
 from odoo.exceptions import UserError
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, date_utils
 from odoo.addons.web.controllers.main import WebClient
+from passlib.tests.utils import limit
 
 _logger = logging.getLogger(__name__)
 
@@ -533,13 +534,17 @@ class RestApi(http.Controller):
                 arguments.extend([self.evaluate(kwargs.get(arg)) for arg in args['arg']])
             k_arguments = dict([(arg, self.evaluate(kwargs[arg])) for arg in args['kwargs'] if kwargs.get(arg)])
             if method in self._GET_METHODS:
-                #if method == 'search_read':
-                #    arguments[0] = [('name', '=ilike', kwargs.get('search') + '%')]
+                if method == 'search_read' and kwargs.get('search'):
+                    domain = [('name', 'ilike', kwargs.get('search'))]
+                    req = request.env[object].sudo().search(domain, limit=100)
+                    arguments[0] = []
+                    if req:
+                        arguments[0] = [('id', 'in', ids)]
                 if type(self.evaluate(kwargs.get('domain'))) is list and ids:
                     arguments[0].append(('id', 'in', ids))
                 elif ids:
                     arguments[0] = [('id', 'in', ids)]
-                elif not self.evaluate(kwargs.get('domain')):
+                elif not self.evaluate(kwargs.get('domain')) and not kwargs.get('search'):
                     arguments[0] = []
             elif ids:
                 arguments.insert(0, ids)
