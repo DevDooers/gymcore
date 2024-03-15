@@ -468,8 +468,8 @@ class RestApi(http.Controller):
         type="http", auth="public", csrf=False, website=True)
     def perform_multi_request(self, object, id=None, method=None, **kwargs):
         auth, user, invalid = self.valid_authentication(kwargs)
-        if not user or invalid:
-            return self.get_response(401, str(401), {'code': 401, 'message': 'Authentication required'})
+        #if not user or invalid:
+        #    return self.get_response(401, str(401), {'code': 401, 'message': 'Authentication required'})
         return self.perform_request(object, id=id, method=method, kwargs=kwargs, user=user)
 
     def perform_request(self, object, method=None, id=None, kwargs={}, user=None):
@@ -533,11 +533,13 @@ class RestApi(http.Controller):
                 arguments.extend([self.evaluate(kwargs.get(arg)) for arg in args['arg']])
             k_arguments = dict([(arg, self.evaluate(kwargs[arg])) for arg in args['kwargs'] if kwargs.get(arg)])
             if method in self._GET_METHODS:
+                if method == 'search_read':
+                    arguments[0] = [('name', '=ilike', kwargs.get('search') + '%')]
                 if type(self.evaluate(kwargs.get('domain'))) is list and ids:
                     arguments[0].append(('id', 'in', ids))
                 elif ids:
                     arguments[0] = [('id', 'in', ids)]
-                elif not self.evaluate(kwargs.get('domain')):
+                elif not self.evaluate(kwargs.get('domain')) and not self.evaluate(kwargs.get('search')):
                     arguments[0] = []
             elif ids:
                 arguments.insert(0, ids)
