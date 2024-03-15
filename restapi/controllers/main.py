@@ -539,8 +539,7 @@ class RestApi(http.Controller):
                     req = request.env[object].sudo().search(domain, limit=100)
                     arguments[0] = []
                     if req:
-                        arguments[0] = [('id', 'in', ids)]
-                        
+                        arguments[0] = [('id', 'in', req.ids)]
                 if type(self.evaluate(kwargs.get('domain'))) is list and ids:
                     arguments[0].append(('id', 'in', ids))
                 elif ids:
