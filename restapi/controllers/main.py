@@ -535,7 +535,7 @@ class RestApi(http.Controller):
             k_arguments = dict([(arg, self.evaluate(kwargs[arg])) for arg in args['kwargs'] if kwargs.get(arg)])
             if method in self._GET_METHODS:
                 if method == 'search_read' and kwargs.get('search'):
-                    domain = [('name', 'ilike', kwargs.get('search').replace("'", ""))]
+                    domain = [('name', 'ilike', kwargs.get('search'))]
                     req = request.env[object].sudo().search(domain, limit=100)
                     arguments[0] = []
                     if req:
