@@ -180,7 +180,10 @@ class ProductProduct(models.Model):
         for product in self:
             template_images = []
             for image in product.product_tmpl_id.template_image_backend_ids:
-                template_images.append((image.id, image.name))
+                template_images.append({
+                    'id': image.id,
+                    'name': image.name
+                })
             product.related_template_image_backend_ids = template_images
 
     def _set_template_image(self):
