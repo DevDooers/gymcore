@@ -174,12 +174,7 @@ class ProductProduct(models.Model):
     _inherit = 'product.product'
 
     product_image_backend_ids = fields.One2many('product.image.backend', 'product_id', string='Images')
-    related_template_image_backend_ids = fields.One2many(
-        'product.image.backend',
-        compute="_get_template_images",
-        inverse="_set_template_image",
-        string="Template Images"
-    )
+    related_template_image_backend_ids = fields.One2many('product.image.backend', compute="_get_template_images", inverse="_set_template_image", string="Template Images")
 
     def _get_template_images(self):
         for product in self:
@@ -189,5 +184,4 @@ class ProductProduct(models.Model):
             product.related_template_image_backend_ids = template_images
 
     def _set_template_image(self):
-        #self.product_tmpl_id.template_image_backend_ids = self.related_template_image_backend_ids
-        pass
+        self.product_tmpl_id.template_image_backend_ids = self.related_template_image_backend_ids
