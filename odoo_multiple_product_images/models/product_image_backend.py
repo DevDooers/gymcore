@@ -182,7 +182,7 @@ class ProductProduct(models.Model):
             for image in product.product_tmpl_id.template_image_backend_ids:
                 template_images.append({
                     'id': image.id,
-                    'image_386': image.image
+                    'image_386': base64.b64decode(image.image)
                 })
             product.related_template_image_backend_ids = template_images
 
