@@ -1,8 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
+  <record id="studio_customization.activo_contact_f960e686-ac79-4165-b53f-2fad07bcc8da" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.nuevo_casilla_de_ver_070fd725-968a-4975-a420-40807b39571a"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">true</field>
+  </record>
+  <record id="studio_customization.contrasena_contact_33e8739f-1168-4eb1-954c-5ab9d3574282" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.nuevo_texto_contact_cfb65787-c1d4-4847-b6ed-02f7b2755bfd"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">""</field>
+  </record>
+  <record id="studio_customization.idioma_contact_982be551-e3f4-4bc0-a4ea-207fbb8cd252" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="base.field_res_partner__lang"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"es_CO"</field>
+  </record>
   <record id="studio_customization.nuevo_entero_product_788e7f9d-2134-4de8-91b4-521fc046d61a" model="ir.default" context="{'studio': True}">
     <field name="field_id" ref="studio_customization.nuevo_entero_product_9b5fc9a0-3447-493e-a791-ac74505d3bc8"/>
     <field name="condition" eval="False"/>
     <field name="json_value">"0"</field>
+  </record>
+  <record id="studio_customization.tipo_de_empresa_cont_e4642763-3499-4b49-8580-50afec0b683d" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="base.field_res_partner__company_type"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">""</field>
   </record>
 </odoo>

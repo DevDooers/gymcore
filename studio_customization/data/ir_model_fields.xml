@@ -60,6 +60,66 @@
     <field name="ttype">binary</field>
     <field name="currency_field" eval="False"/>
   </record>
+  <record id="studio_customization.nuevo_casilla_de_ver_070fd725-968a-4975-a420-40807b39571a" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Activo</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_activo</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">boolean</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_casilla_de_ver_6b420c01-e1c6-4ddf-afa8-80512cccbd70" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Cliente de Gimnasio</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_cliente_de_gimnasio</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">boolean</field>
+    <field name="currency_field" eval="False"/>
+  </record>
   <record id="studio_customization.nuevo_entero_product_9b5fc9a0-3447-493e-a791-ac74505d3bc8" model="ir.model.fields" context="{'studio': True}">
     <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
@@ -90,13 +150,343 @@
     <field name="ttype">integer</field>
     <field name="currency_field" eval="False"/>
   </record>
+  <record id="studio_customization.nuevo_fecha_contact_dfda0433-c609-4a45-bbad-bb74dd909706" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Fecha Nacimiento</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_date_field_98o_1ho7pfsh0</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">date</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_imagen_product_59d6e44d-6c7b-4f5b-8d00-9a93af6aa17c" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Nuevo Imagen</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_binary_field_4nu_1hoa2ohan</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">binary</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_many2one_produ_ae315987-7e31-45cd-a600-ed9593069bfe" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Proveedor</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_proveedor_1</field>
+    <field name="on_delete">set null</field>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation">res.partner</field>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">many2one</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_many2one_produ_e484dbe2-1e87-44ac-a67c-bff7b68d9ba7" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Estado</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_estado</field>
+    <field name="on_delete">set null</field>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation">res.partner</field>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">many2one</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_many2one_produ_edf0f817-9edf-4b2b-a573-b0f4ef455c34" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Estado</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_estado_1</field>
+    <field name="on_delete">set null</field>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation">res.country.state</field>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">many2one</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_many2one_produ_f595bebc-117f-4894-87b2-53f8f5ca6182" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Proveedor</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_proveedor</field>
+    <field name="on_delete">set null</field>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation">product.supplierinfo</field>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">many2one</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_seleccion_prod_83621227-a9aa-4076-a0d4-fb4ac9eac237" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Cuidad</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_selection_field_4n_1hp1pvjt0</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection">[('Apartadó', 'Apartadó'), ('Armenia', 'Armenia'), ('Barrancabermeja', 'Barrancabermeja'), ('Barranquilla', 'Barranquilla'), ('Bogotá', 'Bogotá'), ('Buenaventura', 'Buenaventura'), ('Bucaramanga', 'Bucaramanga'), ('Buga', 'Buga'), ('Cajica', 'Cajicá'), ('Cartago', 'Cartago'), ('Cartagena', 'Cartagena'), ('Chía', 'Chía'), ('Chiquinquirá', 'Chiquinquirá'), ('Cúcuta', 'Cúcuta'), ('Duitama', 'Duitama'), ('Envigado', 'Envigado'), ('Facatativá', 'Facatativá'), ('Floridablanca', 'Floridablanca'), ('Florencia', 'Florencia'), ('Fusagasugá', 'Fusagasugá'), ('Girardot', 'Girardot'), ('Girón', 'Girón'), ('Ibague', 'Ibague'), ('Itagüí', 'Itagüí'), ('Maicao', 'Maicao'), ('Magangué', 'Magangué'), ('Manizales', 'Manizales'), ('Medellín', 'Medellín'), ('Montería', 'Montería'), ('Neiva', 'Neiva'), ('Palmira', 'Palmira'), ('Pasto', 'Pasto'), ('Pereira', 'Pereira'), ('Popayán', 'Popayán'), ('Quibdó', 'Quibdó'), ('Rionegro', 'Rionegro'), ('Riohacha', 'Riohacha'), ('Sahagún', 'Sahagún'), ('SanAndrés', 'San Andrés'), ('SantaMarta', 'Santa Marta'), ('Sincelejo', 'Sincelejo'), ('Soledad', 'Soledad'), ('Tunja', 'Tunja'), ('Tuluá', 'Tuluá'), ('Valledupar', 'Valledupar'), ('Villavicencio', 'Villavicencio'), ('Yopal', 'Yopal')]</field>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">selection</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_seleccion_prod_d1cf20e1-e026-4ad9-99e4-223e6535aed4" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Tipo Gimnasio</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">product.template</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="name">x_studio_tipo_gimnasio</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection">[('flex', 'gimnasio Fles'), ('unicornio', 'gimnasio Unicornio'), ('gymcore', 'gimansio gymcore')]</field>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">selection</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_texto_contact_c1bb3d9b-b758-4b53-8e15-97defd286817" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Contraseña</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_contrasea_1</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">char</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_texto_contact_cfb65787-c1d4-4847-b6ed-02f7b2755bfd" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">Contraseña</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_contrasea</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size" eval="False"/>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">char</field>
+    <field name="currency_field" eval="False"/>
+  </record>
+  <record id="studio_customization.nuevo_texto_contact_e101cab6-66c3-44c6-8ec9-2c53758d10cf" model="ir.model.fields" context="{'studio': True}">
+    <field name="complete_name" eval="False"/>
+    <field name="compute" eval="False"/>
+    <field name="copied" eval="True"/>
+    <field name="depends" eval="False"/>
+    <field name="domain">[]</field>
+    <field name="field_description">UID</field>
+    <field name="groups" eval="[(6, 0, [])]"/>
+    <field name="help" eval="False"/>
+    <field name="index" eval="False"/>
+    <field name="model">res.partner</field>
+    <field name="model_id" ref="base.model_res_partner"/>
+    <field name="name">x_studio_char_field_6l8_1hperslkt</field>
+    <field name="on_delete" eval="False"/>
+    <field name="readonly" eval="False"/>
+    <field name="related" eval="False"/>
+    <field name="relation" eval="False"/>
+    <field name="relation_field" eval="False"/>
+    <field name="relation_table" eval="False"/>
+    <field name="required" eval="False"/>
+    <field name="selectable" eval="True"/>
+    <field name="selection" eval="False"/>
+    <field name="size">25</field>
+    <field name="state">manual</field>
+    <field name="store" eval="True"/>
+    <field name="tracking" eval="False"/>
+    <field name="translate" eval="False"/>
+    <field name="ttype">char</field>
+    <field name="currency_field" eval="False"/>
+  </record>
   <record id="studio_customization.nuevo_texto_multilin_64af39b3-e970-4c06-9299-a344fa9f7daf" model="ir.model.fields" context="{'studio': True}">
     <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
     <field name="domain">[]</field>
-    <field name="field_description">Maquinas</field>
+    <field name="field_description">Máquinas</field>
     <field name="groups" eval="[(6, 0, [])]"/>
     <field name="help" eval="False"/>
     <field name="index" eval="False"/>
@@ -336,7 +726,7 @@
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
     <field name="domain">[]</field>
-    <field name="field_description">Página Web</field>
+    <field name="field_description">Página web</field>
     <field name="groups" eval="[(6, 0, [])]"/>
     <field name="help" eval="False"/>
     <field name="index" eval="False"/>
@@ -366,7 +756,7 @@
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
     <field name="domain">[]</field>
-    <field name="field_description">celular</field>
+    <field name="field_description">Celular</field>
     <field name="groups" eval="[(6, 0, [])]"/>
     <field name="help" eval="False"/>
     <field name="index" eval="False"/>
@@ -396,7 +786,7 @@
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
     <field name="domain">[]</field>
-    <field name="field_description">correo</field>
+    <field name="field_description">Email</field>
     <field name="groups" eval="[(6, 0, [])]"/>
     <field name="help" eval="False"/>
     <field name="index" eval="False"/>
@@ -456,7 +846,7 @@
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
     <field name="domain">[]</field>
-    <field name="field_description">TIK TOK</field>
+    <field name="field_description">TikTok</field>
     <field name="groups" eval="[(6, 0, [])]"/>
     <field name="help" eval="False"/>
     <field name="index" eval="False"/>
