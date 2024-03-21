@@ -2,11 +2,10 @@
 <odoo>
     <data>
        
-        <record model="ir.ui.view" id="account_partner_form_view_inherit_gym">
-            <field name="name">res.partner.form.inherit_gym</field>
+        <record model="ir.ui.view" id="view_partner_form_inherit_gym">
+            <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
-            <field name="priority" eval="50" />
-            <field name="inherit_id" ref="account.view_partner_property_form" />
+            <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="before">
 				    <div class="oe_title">
