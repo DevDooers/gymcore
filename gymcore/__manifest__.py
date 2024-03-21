@@ -5,7 +5,7 @@
     'summary': "Module custom of gymcore",
 
     'description': """
-Custom views, models and add new function and fields-
+Custom views, models and add new function and fields
     """,
 
     'author': "Dooers",
@@ -28,7 +28,7 @@ Custom views, models and add new function and fields-
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        #'demo/demo.xml',
     ],
 }
 
