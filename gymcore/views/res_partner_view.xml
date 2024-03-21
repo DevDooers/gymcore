@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       
+        <record model="ir.ui.view" id="account_partner_form_view_inherit_gymcore">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="50" />
+            <field name="inherit_id" ref="account.view_partner_property_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+				    <div class="oe_title">
+				        <h3>UID: <field name="uid" class="oe_inline"/></h3>
+				    </div>
+				</xpath>
+				<xpath expr="//field[@name='category_id']" position="after">
+		            <field name="password" string="Contraseña" password="1" groups="base.group_system"/>
+		        </xpath>
+
+            </field>
+        </record>
+        
+    </data>
+</odoo>
