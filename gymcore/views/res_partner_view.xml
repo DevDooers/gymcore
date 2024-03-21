@@ -2,8 +2,8 @@
 <odoo>
     <data>
        
-        <record model="ir.ui.view" id="account_partner_form_view_inherit_gymcore">
-            <field name="name">res.partner.form</field>
+        <record model="ir.ui.view" id="account_partner_form_view_inherit_gym">
+            <field name="name">res.partner.form.inherit_gym</field>
             <field name="model">res.partner</field>
             <field name="priority" eval="50" />
             <field name="inherit_id" ref="account.view_partner_property_form" />
