@@ -187,4 +187,5 @@ class ProductProduct(models.Model):
             product.related_template_image_backend_ids = template_images
 
     def _set_template_image(self):
-        self.product_tmpl_id.template_image_backend_ids = self.related_template_image_backend_ids
+        pass
+        #self.product_tmpl_id.template_image_backend_ids = self.related_template_image_backend_ids 
