@@ -8,7 +8,10 @@
 		    <field name="inherit_id" ref="product.product_template_form_view"/>
 		    <field name="arch" type="xml">
 		        <xpath expr="//div[@name='options']" position="inside">
-		            <field name="gym_ok"/>
+		            <span class="d-inline-block">
+                    	<field name="gym_ok"/>
+                        <label for="gym_ok" string="Es un Gimnasio"/>
+                    </span>
 		        </xpath>
 		    </field>
 		</record>
