@@ -649,7 +649,7 @@ class RestApi(http.Controller):
         if not auth_auth:
             return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
         access_token = obj.generate_token()
-        return result = self.get_response(200, '200', {
+        return self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
             "access_token": access_token})
