@@ -534,12 +534,6 @@ class RestApi(http.Controller):
                 arguments.extend([self.evaluate(kwargs.get(arg)) for arg in args['arg']])
             k_arguments = dict([(arg, self.evaluate(kwargs[arg])) for arg in args['kwargs'] if kwargs.get(arg)])
             if method in self._GET_METHODS:
-                if method == 'search_read' and kwargs.get('search'):
-                    domain = [('name', 'ilike', kwargs.get('search'))]
-                    req = request.env[object].sudo().search(domain, limit=100)
-                    arguments[0] = []
-                    if req:
-                        arguments[0] = [('id', 'in', req.ids)]
                 if type(self.evaluate(kwargs.get('domain'))) is list and ids:
                     arguments[0].append(('id', 'in', ids))
                 elif ids:
@@ -635,3 +629,14 @@ class RestApi(http.Controller):
         if request.httprequest.headers.get('Accept') == 'application/json' or request.httprequest.content_type == "application/json":
             result.mimetype = 'application/json'
         return result
+    
+    @http.route(['/restapi/1.0/auth/login'],\
+    type="http", auth="public", csrf=False, website=True)
+    def buscar_usuario(self, **kwargs):
+        auth, user, invalid = self.valid_authentication(kwargs)
+        if not auth or not user or invalid:
+            return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
+        return self.get_response(200, '200', {'client_id': auth[0].consumer_key,
+            'client_secret': auth[0].consumer_secret,
+            'host': request.httprequest.url_root,
+            'database': request.cr.dbname})

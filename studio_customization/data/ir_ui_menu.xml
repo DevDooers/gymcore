@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="stock.menu_product_variant_config_stock" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.product_template_action_product"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Gimnasios</field>
+    <field name="parent_id" ref="stock.menu_stock_inventory_control"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>
