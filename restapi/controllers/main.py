@@ -636,7 +636,23 @@ class RestApi(http.Controller):
         auth, user, invalid = self.valid_authentication(kwargs)
         if not auth or not user or invalid:
             return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
-        return self.get_response(200, '200', {'client_id': auth[0].consumer_key,
-            'client_secret': auth[0].consumer_secret,
-            'host': request.httprequest.url_root,
-            'database': request.cr.dbname})
+        
+        #return self.get_response(200, '200', {'client_id': auth[0].consumer_key,
+        #    'client_secret': auth[0].consumer_secret,
+        #    'host': request.httprequest.url_root,
+        #    'database': request.cr.dbname})
+        
+        
+        kwargs.update(request.httprequest.data or {})
+        obj = request.env['res.partner'].sudo()
+        partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
+        if not auth_auth:
+            return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
+        access_token = obj.generate_token()
+        result = self.get_response(200, '200', {
+            "id": partner_id.id,
+            "display_name": partner_id.name,
+            "access_token": access_token})
+        if request.httprequest.headers.get('Accept') == 'application/json' or request.httprequest.content_type == "application/json":
+            result.mimetype = 'application/json'
+        return result
