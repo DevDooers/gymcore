@@ -646,7 +646,7 @@ class RestApi(http.Controller):
         obj = request.env['res.partner']
         partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
         if not partner_id:
-            return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
+            return self.get_response(401, '401', {"code": 401, "message": kwargs})
         auth = request.env['auth.auth'].sudo()
         access_token = auth.generate_token()
         return self.get_response(200, '200', {
