@@ -642,13 +642,13 @@ class RestApi(http.Controller):
         #    'host': request.httprequest.url_root,
         #    'database': request.cr.dbname})
         
-        
         kwargs.update(request.httprequest.data or {})
-        obj = request.env['res.partner'].sudo()
+        obj = request.env['res.partner']
         partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
         if not partner_id:
             return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
-        access_token = obj.generate_token()
+        auth = request.env['auth.auth'].sudo()
+        access_token = auth.generate_token()
         return self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
