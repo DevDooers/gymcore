@@ -637,11 +637,6 @@ class RestApi(http.Controller):
         if not auth or not user or invalid:
             return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
         
-        #return self.get_response(200, '200', {'client_id': auth[0].consumer_key,
-        #    'client_secret': auth[0].consumer_secret,
-        #    'host': request.httprequest.url_root,
-        #    'database': request.cr.dbname})
-        
         kwargs.update(request.httprequest.data or {})
         obj = request.env['res.partner'].sudo()
         partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
