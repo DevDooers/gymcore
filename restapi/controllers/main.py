@@ -634,14 +634,13 @@ class RestApi(http.Controller):
     type="http", auth="public", csrf=False, website=True)
     def buscar_usuario(self, **kwargs):
         auth, user, invalid = self.valid_authentication(kwargs)
-        if not auth or not user or invalid:
-            return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
-        
+        #if not auth or not user or invalid:
+        #    return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
         kwargs.update(request.httprequest.data or {})
         obj = request.env['res.partner'].sudo()
         partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
         if not partner_id:
-            return self.get_response(401, '401', {"code": 401, "message": kwargs})
+            return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
         auth = request.env['auth.auth'].sudo()
         access_token = auth.generate_token()
         return self.get_response(200, '200', {
