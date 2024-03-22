@@ -649,10 +649,7 @@ class RestApi(http.Controller):
         if not auth_auth:
             return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
         access_token = obj.generate_token()
-        result = self.get_response(200, '200', {
+        return result = self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
             "access_token": access_token})
-        if request.httprequest.headers.get('Accept') == 'application/json' or request.httprequest.content_type == "application/json":
-            result.mimetype = 'application/json'
-        return result
