@@ -647,4 +647,5 @@ class RestApi(http.Controller):
         return self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
+            "image_512": partner_id.image_512,
             "access_token": access_token})
