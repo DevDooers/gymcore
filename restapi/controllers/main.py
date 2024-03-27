@@ -650,8 +650,8 @@ class RestApi(http.Controller):
             "id": partner_id.id,
             "display_name": partner_id.name,
             "image_512": '',
-            #"access_token": access_token,
-            "access_token_validity": access_token_validity,
-            #"token_type": 'Basic',
+            "access_token": access_token,
+            #"access_token_validity": access_token_validity,
+            "token_type": 'Basic',
             #"refresh_token": auth_auth.refresh_token,
             })
