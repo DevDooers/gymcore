@@ -648,8 +648,8 @@ class RestApi(http.Controller):
         auth_auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
         return self.get_response(200, '200', {
             "id": partner_id.id,
-            #"display_name": partner_id.name,
-            #"image_512": '',
+            "display_name": partner_id.name,
+            "image_512": '',
             #"access_token": access_token,
             #"access_token_validity": access_token_validity,
             #"token_type": 'Basic',
