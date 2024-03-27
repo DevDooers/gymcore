@@ -645,7 +645,7 @@ class RestApi(http.Controller):
         auth_auth = auth.search([('access_type', '=', 'basic')], limit=1, order='id desc')
         access_token = auth.generate_token()
         access_token_validity = datetime.now() + timedelta(minutes=30)
-        auth_auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
+        #auth_auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
         return self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
@@ -653,5 +653,4 @@ class RestApi(http.Controller):
             "access_token": access_token,
             "access_token_validity": str(access_token_validity),
             "token_type": 'Basic',
-            "refresh_token": auth.refresh_token,
-            })
+            "refresh_token": auth_auth.refresh_token})
