@@ -643,8 +643,6 @@ class RestApi(http.Controller):
         auth = request.env['auth.auth'].sudo()
         ##get the last authentication basic.
         auth_auth = auth.search([('access_type', '=', 'basic')], limit=1, order='id desc')
-        if not auth_auth:
-            return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
         access_token = auth.generate_token()
         access_token_validity = datetime.now() + timedelta(minutes=30)
         auth_auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
