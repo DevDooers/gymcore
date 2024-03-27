@@ -640,10 +640,10 @@ class RestApi(http.Controller):
         partner_id = obj.search([('email', '=', kwargs.get('email')), ('password', '=', kwargs.get('password'))], limit=1)
         if not partner_id:
             return self.get_response(401, '401', {"code": 401, "message": "Invalid Credentials."})
+        auth = request.env['auth.auth'].sudo()
         access_token = auth.generate_token()
         access_token_validity = datetime.now() + timedelta(minutes=30)
-        auth = request.env['auth.auth'].sudo()
-        auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
+        #auth.basic_access_token_ids = [(0, 0, {'access_token': access_token, 'auth_id': False, 'access_token_validity': access_token_validity})]
         return self.get_response(200, '200', {
             "id": partner_id.id,
             "display_name": partner_id.name,
@@ -651,5 +651,5 @@ class RestApi(http.Controller):
             "access_token": access_token,
             "access_token_validity": access_token_validity,
             "token_type": 'Basic',
-            "refresh_token": auth.refresh_token
+            "refresh_token": auth.refresh_token or '',
             })
