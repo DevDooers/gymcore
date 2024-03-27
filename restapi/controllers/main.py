@@ -651,5 +651,5 @@ class RestApi(http.Controller):
             "access_token": access_token,
             "access_token_validity": access_token_validity,
             "token_type": 'Basic',
-            'refresh_token': auth_auth.refresh_token
+            #"refresh_token": auth_auth.refresh_token
             })
