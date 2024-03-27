@@ -633,7 +633,6 @@ class RestApi(http.Controller):
     @http.route(['/restapi/1.0/auth/login'],\
     type="http", auth="public", csrf=False, website=True)
     def buscar_usuario(self, **kwargs):
-        auth, user, invalid = self.valid_authentication(kwargs)
         #if not auth or not user or invalid:
         #    return self.get_response(401, '401', {'code': 401, 'message': 'Authentication required'})
         #kwargs.update(request.httprequest.data or {})
