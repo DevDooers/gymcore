@@ -650,7 +650,7 @@ class RestApi(http.Controller):
             "id": partner_id.id,
             "uid": partner_id.uid,
             "display_name": partner_id.name,
-            "image_512": str(partner_id.image_1920),
+            "avatar_img": str(partner_id.image_1920),
             "access_token": access_token,
             "access_token_validity": str(access_token_validity),
             "token_type": 'Basic',
