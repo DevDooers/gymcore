@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.odoo_studio_product__dc8aa5d9-7520-4022-b4ff-57f2989e71f1" model="ir.ui.view" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//form[@name='Product Template']/sheet[@name='product_form']/div[not(@name)][1]/h1[1]/div[1]/field[@name='name']" position="attributes">
+          <attribute name="placeholder">p.ej. Gimnasio Smartfit Metrópolis</attribute>
+        </xpath>
+        <xpath expr="//page[@name='images']" position="attributes">
+          <attribute name="invisible">not gym_ok</attribute>
+          <attribute name="string">Imagenes Gym</attribute>
+        </xpath>
+        <xpath expr="//page[@name='images']" position="before">
+          <page string="Info del gimnasio" name="studio_page_ek_1ho5i2kgo" invisible="not gym_ok">
+            <group name="studio_group_ek">
+              <group name="studio_group_ek_left" string="Información del Gimnasio">
+                <field name="x_studio_proveedor_1"/>
+                <field name="x_studio_selection_field_4n_1hp1pvjt0" string="Cuidad"/>
+                <field name="x_studio_estado_1" domain="[('country_id.code','=','CO')]"/>
+                <field name="x_studio_char_field_2jc_1ho5i35jg" string="Dirección"/>
+                <field name="x_studio_correo" widget="email" string="Email"/>
+                <field name="x_studio_celular" widget="phone" string="Celular"/>
+                <field name="x_studio_latitud"/>
+                <field name="x_studio_longitud"/>
+                <field name="x_studio_tipo_gimnasio"/>
+              </group>
+              <group name="studio_group_ek_right" string="Descripción del Gimnasio">
+                <field name="x_studio_horario"/>
+                <field name="x_studio_descripcin"/>
+                <field name="x_studio_coachs"/>
+                <field name="x_studio_maquinas" string="Máquinas"/>
+              </group>
+            </group>
+            <group name="studio_group_cp_1ho5ie1vm">
+              <group name="studio_group_cp_left" string="Redes Sociales">
+                <field name="x_studio_pgina_web" widget="url" string="Página web" options="{&quot;website_path&quot;:true}"/>
+                <field name="x_studio_facebook" widget="url"/>
+                <field name="x_studio_instagram" widget="url"/>
+                <field name="x_studio_tik_tok" widget="url" string="TikTok"/>
+                <field name="x_studio_x" widget="url"/>
+              </group>
+              <group name="studio_group_cp_right">
+                <field widget="file" invisible="True" name="x_studio_documento_filename"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </data>
+    </field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="key" eval="False"/>
+    <field name="mode">extension</field>
+    <field name="model">product.template</field>
+    <field name="name">Odoo Studio: product.template.product.form customization</field>
+    <field name="priority">150</field>
+    <field name="type">form</field>
+  </record>
+  <record id="studio_customization.odoo_studio_res_part_5d6b1dd9-cac7-4a9c-8a57-02e6e4bc6ab2" model="ir.ui.view" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//form[1]/sheet[1]/div[not(@name)][1]/h1[1]/field[@name='name']" position="attributes">
+          <attribute name="placeholder">ej. Cliente ABC</attribute>
+        </xpath>
+        <xpath expr="//field[@name='vat']" position="attributes">
+          <attribute name="string">Identificador</attribute>
+        </xpath>
+        <xpath expr="//field[@name='category_id']" position="after">
+          <field name="x_studio_date_field_98o_1ho7pfsh0" string="Fecha Nacimiento"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/group[1]" position="after">
+          <group name="studio_group_2aq_1ho7qq4qk">
+      </group>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]" position="after">
+          <group name="studio_group_2t9_1hperq791">
+            <group name="studio_group_2t9_left"/>
+            <group name="studio_group_2t9_right"/>
+          </group>
+          <notebook name="studio_notebook_6kf_1hperr6dl">
+            <page string="New Page" name="studio_page_6kf">
+              <group name="studio_group_6kf">
+                <group name="studio_group_6kf_left"/>
+                <group name="studio_group_6kf_right"/>
+              </group>
+            </page>
+          </notebook>
+        </xpath>
+      </data>
+    </field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="key" eval="False"/>
+    <field name="mode">extension</field>
+    <field name="model">res.partner</field>
+    <field name="name">Odoo Studio: res.partner.form customization</field>
+    <field name="priority">160</field>
+    <field name="type">form</field>
+  </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       
+        <record model="ir.ui.view" id="view_partner_form_inherit_gym">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+				    <div class="oe_title">
+				        <h3>UID: <field name="uid" class="oe_inline"/></h3>
+				    </div>
+				</xpath>
+				<xpath expr="//field[@name='category_id']" position="after">
+		            <field name="password" string="Contraseña" password="1" groups="base.group_system"/>
+		        </xpath>
+
+            </field>
+        </record>
+        
+    </data>
+</odoo>

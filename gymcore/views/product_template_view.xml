@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+       
+        <record id="product_template_form_view_inherit_core" model="ir.ui.view">
+		    <field name="name">product.template.common.form.inherit_core</field>
+		    <field name="model">product.template</field>
+		    <field name="inherit_id" ref="product.product_template_form_view"/>
+		    <field name="arch" type="xml">
+		        <xpath expr="//div[@name='options']" position="inside">
+		            <span class="d-inline-block">
+                    	<field name="gym_ok"/>
+                        <label for="gym_ok" string="Es un Gimnasio"/>
+                    </span>
+		        </xpath>
+		    </field>
+		</record>
+
+
+        
+    </data>
+</odoo>
